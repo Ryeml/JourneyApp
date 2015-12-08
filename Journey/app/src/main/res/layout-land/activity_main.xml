@@ -17,7 +17,7 @@
             android:id="@+id/projectListPanel"
             android:name="com.example.nnguy637.journey.ProjectListFragment"
             tools:layout="@layout/fragment_project_list"
-           >
+            >
         </fragment>
     </FrameLayout>
 
@@ -28,14 +28,14 @@
         android:layout_alignBottom="@+id/project_list_fragment"
         android:layout_alignParentEnd="false"
         android:layout_alignParentBottom="true">
-    <fragment
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonsPanel"
-        android:name="com.example.nnguy637.journey.ButtonsFragment"
-        tools:layout="@layout/fragment_buttons"
-        >
-    </fragment>
-</FrameLayout>
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonsPanel"
+            android:name="com.example.nnguy637.journey.ButtonsFragment"
+            tools:layout="@layout/fragment_buttons"
+            >
+        </fragment>
+    </FrameLayout>
 
 </RelativeLayout>
