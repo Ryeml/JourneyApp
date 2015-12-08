@@ -16,7 +16,6 @@ import android.widget.ImageView;
 public class ButtonsFragment extends Fragment {
 
     public ImageView mAdd;
-    public ImageView mRemove;
     public ImageView mSettings;
 
     @Override
@@ -39,7 +38,6 @@ public class ButtonsFragment extends Fragment {
             }
         });
 
-        mRemove = (ImageView)v.findViewById(R.id.remove_button);
 
         mSettings = (ImageView)v.findViewById(R.id.settings_button);
         mSettings.setOnClickListener(new View.OnClickListener()

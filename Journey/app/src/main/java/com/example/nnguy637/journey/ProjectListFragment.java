@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by nnguy637 on 12/6/2015.
@@ -53,6 +54,7 @@ public class ProjectListFragment extends Fragment {
             mProjectRecyclerView.setAdapter(mAdapter);
         }
             else {
+            mAdapter.setProjects(projects);
             mAdapter.notifyDataSetChanged();
         }
     }
@@ -63,11 +65,10 @@ public class ProjectListFragment extends Fragment {
         private TextView mProjectTitle;
         public ProjectHolder(View itemView)
         {
-
             super(itemView);
             itemView.setOnClickListener(this);
             //set view objects
-            mProjectTitle = (TextView)itemView.findViewById(R.id.item_project_title);
+           mProjectTitle = (TextView)itemView.findViewById(R.id.item_project_title);
         }
 
         public void bindProject(Project project)
@@ -113,6 +114,11 @@ public class ProjectListFragment extends Fragment {
         @Override
         public int getItemCount() {
             return mProjects.size();
+        }
+
+        public void setProjects(List<Project> projects)
+        {
+            mProjects = projects;
         }
 
     }

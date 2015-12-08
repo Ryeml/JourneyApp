@@ -4,6 +4,8 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
     <TextView
+        android:padding="10dp"
+        android:textStyle="bold"
         android:id="@+id/item_project_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

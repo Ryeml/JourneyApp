@@ -11,12 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />
-    <ImageView
-        android:id="@+id/remove_button"
-        android:src="@drawable/button_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="4dp"/>
+
     <ImageView
         android:id="@+id/settings_button"
         android:src="@drawable/settings"

@@ -2,6 +2,7 @@ package com.example.nnguy637.journey;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Random;
 import java.util.UUID;
 
 /**
@@ -18,7 +19,12 @@ public class Project {
 
     public Project()
     {
-        mID = UUID.randomUUID();
+        this(UUID.randomUUID());
+    }
+
+    public Project(UUID id)
+    {
+        mID = id;
     }
 
     public UUID getID() {

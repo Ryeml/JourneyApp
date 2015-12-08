@@ -5,29 +5,24 @@
                 tools:context=".MainActivity"
                 android:id="@+id/main">
 
-    <FrameLayout
-        android:id="@+id/project_list_fragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="110dp">
 
-        <fragment
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/projectListPanel"
+            android:id="@+id/project_list_fragment"
             android:name="com.example.nnguy637.journey.ProjectListFragment"
             tools:layout="@layout/fragment_project_list"
-           >
-        </fragment>
-    </FrameLayout>
+            android:layout_above="@+id/buttons_fragment"
+        >
+        </FrameLayout>
 
     <FrameLayout
         android:id="@+id/buttons_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/project_list_fragment"
         android:layout_alignParentEnd="false"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        >
     <fragment
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -21,8 +21,8 @@ public class MainActivity extends FragmentActivity {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
 
-        ft.add(R.id.projectListPanel, mProjectListFragment, "ProjectListFragment");
-        ft.add(R.id.buttonsPanel, mButtonsFragment, "ButtonsFragment");
+        ft.add(R.id.project_list_fragment, mProjectListFragment, "ProjectListFragment");
+        ft.add(R.id.buttons_fragment, mButtonsFragment, "ButtonsFragment");
 
         ft.commit();
     }
