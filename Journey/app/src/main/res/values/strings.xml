@@ -4,6 +4,7 @@
     <string name="project_description">Description: </string>
     <string name="project_startDate">Started: </string>
     <string name="project_endDate">Ends: </string>
-    <string name="delete_project_button">Delete</string>
+    <string name="delete_project_button">Delete Project</string>
     <string name="action_settings">Settings</string>
+    <string name="milestones">Milestones</string>
 </resources>

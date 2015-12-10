@@ -7,7 +7,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Milestones"
+        android:text="PROJECT CREATION"
         style="?android:listSeparatorTextViewStyle"/>
 
     <EditText
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:hint="Enter the name of your Journey"/>
+        android:hint="Enter the title of this project"/>
 
     <TextView
     android:layout_width="match_parent"
@@ -55,13 +55,11 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         />
-    <CheckBox
-        android:id="@+id/journey_completed"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:text="Completed"
-        />
-
+    <Button
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:id="@+id/submit_journey"
+        android:text="Submit Journey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

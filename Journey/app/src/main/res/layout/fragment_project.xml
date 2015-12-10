@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
+<LinearLayout   xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id="@+id/project_page">
+
+<TableLayout
+    android:paddingLeft="10dp"
+    android:paddingTop="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <TextView
         android:id="@+id/title_textView"
         android:text="@string/project_title"
@@ -15,7 +22,7 @@
         android:id="@+id/project_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/title_textView"/>
+        />
 
     <TextView
         android:id="@+id/description_textView"
@@ -26,49 +33,65 @@
 
     <TextView
         android:id="@+id/project_description"
-        android:layout_below="@+id/title_textView"
-        android:layout_toRightOf="@id/description_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <TextView
         android:id="@+id/start_date_textView"
-        android:layout_below="@+id/description_textView"
         android:text="@string/project_startDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:layout_below="@+id/description_textView"
         android:id="@+id/project_start_date"
-        android:layout_toRightOf="@+id/start_date_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView
         android:id="@+id/end_date_textView"
-        android:layout_below="@id/start_date_textView"
         android:text="@string/project_endDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <TextView
         android:id="@+id/project_end_date"
-        android:layout_below="@id/start_date_textView"
-        android:layout_toRightOf="@+id/end_date_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    </TableLayout>
+
+
+<LinearLayout
+
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+
+
     <TextView
-        android:id="@+id/milestones_textView"
+    android:id="@+id/milestones_textView"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:layout_gravity="center"
+    android:textStyle="bold"
+    android:text="@string/milestones"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+    <fragment
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="100dp"
+        android:id="@+id/milestonesPanel"
+        tools:layout="@layout/fragment_milestone_list"
+        >
+    </fragment>
+
+</LinearLayout>
+
     <Button
         android:id="@+id/delete_project_button"
         android:text="@string/delete_project_button"
-        android:layout_gravity="bottom"
+        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/end_date_textView"
-        android:layout_toRightOf="@+id/milestones_textView"
-        android:layout_toEndOf="@+id/milestones_textView"
         android:layout_marginTop="116dp"/>
-</RelativeLayout>
+</LinearLayout>

@@ -36,17 +36,6 @@ public class ButtonsFragment extends Fragment {
             }
         });
 
-        mSettings = (ImageView)v.findViewById(R.id.settings_button);
-        mSettings.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
-                Intent i = new Intent(getActivity(), SettingsActivity.class);
-               startActivity(i);
-            }
-        });
-
-
         return v;
     }
 }
