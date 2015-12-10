@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -97,6 +96,11 @@ public class ProjectManager {
     public void addProject(Project p) {
         ContentValues values = getContentValues(p);
         mDatabase.insert(ProjectDbSchema.ProjectTable.NAME, null, values);
+    }
+
+    public void deleteProject(String projectId)
+    {
+        mDatabase.delete(ProjectDbSchema.ProjectTable.NAME, "uuid = ?", new String[]{ projectId});
     }
 
     public void updateProject(Project project) {

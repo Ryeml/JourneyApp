@@ -20,13 +20,13 @@ public class ProjectBaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db)
     {
-        db.execSQL("create table" + ProjectDbSchema.ProjectTable.NAME + "(" +
-                "_id integer primary key autoincrement, " +
+        db.execSQL("CREATE TABLE " + ProjectDbSchema.ProjectTable.NAME + "(" +
+                "_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 ProjectDbSchema.ProjectTable.Cols.UUID + ", " +
                 ProjectDbSchema.ProjectTable.Cols.TITLE + ", " +
                 ProjectDbSchema.ProjectTable.Cols.DESCRIPTION + ", " +
                 ProjectDbSchema.ProjectTable.Cols.START_DATE + ", " +
-                ProjectDbSchema.ProjectTable.Cols.END_DATE + ")");
+                ProjectDbSchema.ProjectTable.Cols.END_DATE + ");");
     }
 
     @Override

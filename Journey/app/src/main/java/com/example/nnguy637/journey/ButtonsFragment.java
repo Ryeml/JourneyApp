@@ -14,10 +14,8 @@ import android.widget.ImageView;
  * Created by nnguy637 on 12/6/2015.
  */
 public class ButtonsFragment extends Fragment {
-
-    public ImageView mAdd;
-    public ImageView mSettings;
-
+    private ImageView mAdd;
+    private ImageView mSettings;
     @Override
     public void onCreate(Bundle savedStateInstance)
     {
@@ -38,14 +36,13 @@ public class ButtonsFragment extends Fragment {
             }
         });
 
-
         mSettings = (ImageView)v.findViewById(R.id.settings_button);
         mSettings.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
             {
                 Intent i = new Intent(getActivity(), SettingsActivity.class);
-                startActivity(i);
+               startActivity(i);
             }
         });
 
