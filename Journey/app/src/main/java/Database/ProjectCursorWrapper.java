@@ -3,8 +3,10 @@ package Database;
 import android.database.Cursor;
 import android.database.CursorWrapper;
 
+import com.example.nnguy637.journey.Milestones;
 import com.example.nnguy637.journey.Project;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
 
@@ -23,7 +25,7 @@ public class ProjectCursorWrapper extends CursorWrapper {
         long start_date = getLong(getColumnIndex(ProjectDbSchema.ProjectTable.Cols.START_DATE));
         long end_date = getLong(getColumnIndex(ProjectDbSchema.ProjectTable.Cols.END_DATE));
 
-        Project project = new Project(UUID.fromString(uuidString));
+        Project project = new Project(UUID.fromString(uuidString), new ArrayList<Milestones>());
         project.setProjectTitle(title);
         project.setProjectDescription(description);
         project.setStartDate(new Date(start_date));

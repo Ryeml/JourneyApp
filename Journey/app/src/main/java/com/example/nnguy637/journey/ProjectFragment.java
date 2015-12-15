@@ -1,6 +1,7 @@
 package com.example.nnguy637.journey;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
@@ -8,6 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -19,12 +24,15 @@ import java.util.UUID;
 public class ProjectFragment extends Fragment {
 
     private Project mProject;
+
     private TextView mTitle;
     private TextView mDescription;
     private TextView mStartDate;
     private TextView mEndDate;
     private Button mDeleteButton;
-    private UUID projectId;
+    private Button mAddMSButton;
+
+    public static  UUID projectId;
     private static final String ARG_PROJECT_ID = "project_id";
 
     public static ProjectFragment newInstance(UUID projectId)
@@ -49,12 +57,15 @@ public class ProjectFragment extends Fragment {
     {
         super.onPause();
         ProjectManager.get(getActivity()).updateProject(mProject);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         View v = inflater.inflate(R.layout.fragment_project, container, false);
+        inflater.inflate(R.layout.fragment_milestone_list, container, false);
+
 
         mTitle = (TextView)v.findViewById(R.id.project_title);
         mTitle.setText(mProject.getProjectTitle());
@@ -68,11 +79,17 @@ public class ProjectFragment extends Fragment {
         mEndDate=(TextView)v.findViewById(R.id.project_end_date);
         mEndDate.setText(mProject.getEndDate().toString());
 
+        mAddMSButton = (Button)v.findViewById(R.id.add_milestone_button);
+        mAddMSButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), AddMilestoneActivity.class);
+                startActivity(i);
+            }
+        });
+
         mDeleteButton =(Button)v.findViewById(R.id.delete_project_button);
-        mDeleteButton.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
+        mDeleteButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
                 AlertDialog.Builder delete_confirm = new AlertDialog.Builder(getContext());
                 delete_confirm.setMessage("Delete this project?");
                 delete_confirm.setCancelable(true);
@@ -92,13 +109,14 @@ public class ProjectFragment extends Fragment {
                             }
                         });
 
-                AlertDialog alert11 = delete_confirm.create();
-                alert11.show();
+                AlertDialog alert = delete_confirm.create();
+                alert.show();
             }
         });
 
+
         //credit to StackOverFlow user @IndexOutOfBounds
-        //randomizes fragment background color
+        //randomizes project fragment background color
         int[] androidColors = getResources().getIntArray(R.array.androidcolors);
         int randomAndroidColor = androidColors[new Random().nextInt(androidColors.length)];
         v.setBackgroundColor(randomAndroidColor);

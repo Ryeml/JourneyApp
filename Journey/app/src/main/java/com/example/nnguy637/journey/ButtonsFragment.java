@@ -15,7 +15,7 @@ import android.widget.ImageView;
  */
 public class ButtonsFragment extends Fragment {
     private ImageView mAdd;
-    private ImageView mSettings;
+
     @Override
     public void onCreate(Bundle savedStateInstance)
     {

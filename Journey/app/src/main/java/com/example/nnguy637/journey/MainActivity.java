@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
 public class MainActivity extends FragmentActivity {
-
+    
     ProjectListFragment mProjectListFragment;
     ButtonsFragment mButtonsFragment;
 

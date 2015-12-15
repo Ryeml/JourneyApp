@@ -4,7 +4,8 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/project_page">
+                android:id="@+id/project_page"
+                android:weightSum="1">
 
 <TableLayout
     android:paddingLeft="10dp"
@@ -13,6 +14,7 @@
     android:layout_height="wrap_content">
     <TextView
         android:id="@+id/title_textView"
+        android:textStyle="bold"
         android:text="@string/project_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,6 +28,7 @@
 
     <TextView
         android:id="@+id/description_textView"
+        android:textStyle="bold"
         android:layout_below="@+id/title_textView"
         android:text="@string/project_description"
         android:layout_width="wrap_content"
@@ -38,6 +41,7 @@
 
     <TextView
         android:id="@+id/start_date_textView"
+        android:textStyle="bold"
         android:text="@string/project_startDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -48,6 +52,7 @@
         android:layout_height="wrap_content"/>
     <TextView
         android:id="@+id/end_date_textView"
+        android:textStyle="bold"
         android:text="@string/project_endDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -63,35 +68,51 @@
 
     android:orientation="vertical"
     android:layout_height="wrap_content"
-    android:layout_width="wrap_content">
+    android:layout_width="match_parent">
 
 
     <TextView
     android:id="@+id/milestones_textView"
     android:paddingTop="20dp"
     android:paddingBottom="20dp"
-    android:layout_gravity="center"
+    android:gravity="center"
     android:textStyle="bold"
     android:text="@string/milestones"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"/>
-    <fragment
+</LinearLayout>
+
+    <FrameLayout
+
+
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <fragment
+            android:layout_width="wrap_content"
+            android:layout_height="218dp"
+            android:id="@+id/milestone_panel"
         android:layout_gravity="center"
         android:layout_marginLeft="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:id="@+id/milestonesPanel"
+        android:name="com.example.nnguy637.journey.MilestoneListFragment"
         tools:layout="@layout/fragment_milestone_list"
-        >
-    </fragment>
-
-</LinearLayout>
+            >
+            </fragment>
+    </FrameLayout>
 
     <Button
-        android:id="@+id/delete_project_button"
-        android:text="@string/delete_project_button"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"/>
+        android:layout_width="wrap_content"
+        android:id="@+id/add_milestone_button"
+        android:text="@string/add_ms"
+        android:layout_gravity="center_horizontal">
+    </Button>
+    <Button
+        android:id="@+id/delete_project_button"
+    android:text="@string/delete_project_button"
+    android:layout_gravity="center_horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"/>
+
 </LinearLayout>
+

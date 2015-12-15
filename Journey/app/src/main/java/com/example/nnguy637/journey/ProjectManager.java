@@ -36,6 +36,7 @@ public class ProjectManager {
         mDatabase = new ProjectBaseHelper(mContext).getWritableDatabase();
     }
 
+
     public List<Project> getProjects() {
         List<Project> projects = new ArrayList<>();
         ProjectCursorWrapper cursor = queryProjects(null, null);
@@ -75,6 +76,7 @@ public class ProjectManager {
         values.put(ProjectDbSchema.ProjectTable.Cols.DESCRIPTION, project.getProjectDescription());
         values.put(ProjectDbSchema.ProjectTable.Cols.START_DATE, project.getStartDate().toString());
         values.put(ProjectDbSchema.ProjectTable.Cols.END_DATE, project.getEndDate().toString());
+
 
         return values;
     }

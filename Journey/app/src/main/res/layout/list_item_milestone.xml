@@ -5,9 +5,9 @@
               android:layout_height="match_parent">
 <TextView
     android:paddingTop="12dp"
-    android:id="@+id/milestone_title"
+    android:id="@+id/item_milestone_title"
     android:layout_gravity="left"
-    android:layout_width="300dp"
+    android:layout_width="156dp"
     android:layout_height="wrap_content"/>
 
     <CheckBox

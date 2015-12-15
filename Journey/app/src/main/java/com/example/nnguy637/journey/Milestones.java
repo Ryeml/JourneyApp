@@ -1,6 +1,5 @@
 package com.example.nnguy637.journey;
 
-import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -9,25 +8,16 @@ import java.util.UUID;
 
 public class Milestones {
 
-    //milestone Id
-    private UUID mMileStoneId;
-    //project Id that the milestone belongs to
-    private UUID mProjectId;
+    public UUID mMileStoneId;
 
-    public Date getMSStartDate() {
-        return mMSStartDate;
+    private String mGoal;
+
+    public String getProjectId() {
+        return mProjectId;
     }
 
-    public void setMSStartDate(Date MSStartDate) {
-        mMSStartDate = MSStartDate;
-    }
-
-    public Date getMSEndDate() {
-        return mMSEndDate;
-    }
-
-    public void setMSEndDate(Date MSEndDate) {
-        mMSEndDate = MSEndDate;
+    public void setProjectId(String projectId) {
+        mProjectId = projectId;
     }
 
     public UUID getMileStoneId() {
@@ -38,27 +28,36 @@ public class Milestones {
         mMileStoneId = mileStoneId;
     }
 
-    public String getMileStoneGoal() {
-        return mMileStoneGoal;
-    }
-
-    public void setMileStoneGoal(String mileStoneGoal) {
-        mMileStoneGoal = mileStoneGoal;
-    }
-
-    public boolean isCompleted() {
+    public String getIsCompleted() {
         return mIsCompleted;
     }
 
-    public void setIsCompleted(boolean isCompleted) {
+    public void setIsCompleted(String isCompleted) {
         mIsCompleted = isCompleted;
     }
 
-    private String mMileStoneGoal;
-    //limit MS SD and ED between ranges of Project start and end dates
-    private Date mMSStartDate;
-    private Date mMSEndDate;
-    private boolean mIsCompleted;
+    public String getGoal() {
+        return mGoal;
+    }
+
+    public void setGoal(String goal) {
+        mGoal = goal;
+    }
+
+    private String mProjectId;
+    private String mIsCompleted;
+
+    public Milestones()
+    {
+        this(UUID.randomUUID());
+    }
+
+    public Milestones(UUID id)
+    {
+        mMileStoneId = id;
+    }
+
+
 
 
 }

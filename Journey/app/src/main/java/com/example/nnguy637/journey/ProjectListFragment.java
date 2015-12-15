@@ -63,6 +63,7 @@ public class ProjectListFragment extends Fragment {
     {
         private Project mProject;
         private TextView mProjectTitle;
+        private TextView mCompletionRate;
         public ProjectHolder(View itemView)
         {
             super(itemView);

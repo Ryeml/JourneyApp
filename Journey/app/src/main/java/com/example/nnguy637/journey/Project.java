@@ -14,17 +14,29 @@ public class Project {
 
     private String mProjectTitle;
     private String mProjectDescription;
+
     private Date mStartDate;
     private Date mEndDate;
 
-    public Project()
-    {
-        this(UUID.randomUUID());
+    public ArrayList<Milestones> getMilestonesArrayList() {
+        return mMilestonesArrayList;
     }
 
-    public Project(UUID id)
+    public void setMilestonesArrayList(ArrayList<Milestones> milestonesArrayList) {
+        mMilestonesArrayList = milestonesArrayList;
+    }
+
+    private ArrayList<Milestones> mMilestonesArrayList;
+
+    public Project()
+    {
+        this(UUID.randomUUID(), null);
+    }
+
+    public Project(UUID id, ArrayList<Milestones> milestonesArrayList)
     {
         mID = id;
+        mMilestonesArrayList = milestonesArrayList;
     }
 
     public UUID getID() {

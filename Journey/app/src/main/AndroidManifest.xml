@@ -18,10 +18,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddProjectActivity">
+            android:name=".AddProjectActivity"
+            android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".ProjectActivity">
+            android:name=".ProjectActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".AddMilestoneActivity"
+            android:screenOrientation="portrait">
+
         </activity>
     </application>
 
